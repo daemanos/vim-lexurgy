@@ -18,11 +18,18 @@ syntax keyword lscKeywords
     \ Literal literal
     \ Unchanged unchanged
 
-syntax match lscNumber "\v<\d+>"
-syntax match lscName "\v<\w+>"
-syntax match lscString "\V<\(\(\\\\\.\)\|\[^ \\,.=>()*[\\]{}+?/\\-_:!~@#&\n\r\]\)\+>"
+
+syntax match lscNumber "\v\d+"
+syntax match lscName "\v\w+"
+syntax match lscString "\V\(\(\\\\\.\)\|\[^ \\,.=>()*[\\]{}+?/\\-_:!~@#&\n\r\]\)\+"
+syntax match lscComment "\v^\#.*"
+syntax match lscClassref "\v\@\w+"
+syntax match lscChangeRule "\v^\w+(-(\w+|\d+))*"
 
 
 highlight default link lscTodos Todo
 highlight default link lscKeywords Keyword
 highlight default link lscNumber Number
+highlight default link lscComment Comment
+highlight default link lscClassref Identifier
+highlight default link lscChangeRule Function
